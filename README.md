@@ -5,4 +5,4 @@
 
 **HTML:** <https://murakamishinyu.github.io/vivliostyle-dev2023spring/slide.html>
 
-**Event:** [CSS組版 Vivliostyle ユーザーと開発者の集い 2023春](https://vivliostyle.connpass.com/event/264332/)
+**Event:** [CSS組版 Vivliostyle ユーザーと開発者の集い 2023春](https://vivliostyle.connpass.com/event/280760/)
