@@ -174,7 +174,7 @@ CSS組版のプレビューにとどまらず、ブラウザで本を読むた�
 
 ## Vivliostyle Pubの開発を進める
 
-- 原稿ファイルごとのプレビューと全体プレビューの両方可能に
+- 原稿ファイルごとのプレビューだけでなく全体プレビューも
 - 原稿（Markdown/HTML）とスタイルシート（CSS）を同時に開いて編集可能に
 - [Vivliostyle Base Theme](https://github.com/vivliostyle/themes/tree/main/packages/%40vivliostyle/theme-base)のしくみに対応
 - その他
@@ -190,10 +190,10 @@ Vivliostyle CLIがv7に。目次生成機能など今後予定されている改
 
 ## 開発貢献者たち、協力者の皆様に感謝！
 
-開発協力はもちろん、不具合報告や改良要望も歓迎します！
+開発貢献はもちろん、不具合報告や改良要望も歓迎します！
 
 - コミュニティ→ https://vivliostyle.org/ja/community/
-- あなたも Vivliostyle のスポンサーになりませんか→ https://vivliostyle.org/ja/sponsors/
+- あなたも Vivliostyle のスポンサーになりませんか<br>→ https://vivliostyle.org/ja/sponsors/
 
 Vivliostyleのサービスやプロダクトをビジネスで利用する上での相談なども歓迎します。ぜひお問合せください。
 
