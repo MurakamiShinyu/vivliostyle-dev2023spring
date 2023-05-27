@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Vivliostyleの最新の進化</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Shinyu Murakami">
+    <link rel="stylesheet" href="theme-slide/theme.css">
+  </head>
+  <body>
+    <section class="level1" aria-labelledby="vivliostyleの最新の進化">
+      <h1 class="cover" id="vivliostyleの最新の進化">Vivliostyleの最新の進化</h1>
+      <p>2023-05-28<br>Shinyu Murakami<br>Vivliostyle Foundation</p>
+    </section>
+    <section class="level1" aria-labelledby="目次">
+      <h1 class="toc" role="doc-toc" id="目次">目次</h1>
+    </section>
+    <section class="level1" aria-labelledby="css組版vivliostyle入門の本が出たこと">
+      <h1 id="css組版vivliostyle入門の本が出たこと">『CSS組版Vivliostyle入門』の本が出たこと🎉</h1>
+      <section class="level2" aria-labelledby="やっとvivliostyleがここまでの完成度に">
+        <h2 id="やっとvivliostyleがここまでの完成度に">やっとVivliostyleがここまでの完成度に</h2>
+        <ul>
+          <li>CSS組版の基本機能がだいぶ完成し、不便なところの改善が進んだことで、より多くの人がCSS組版Vivliostyleを学び始めるのによい状態になってきたこと</li>
+          <li>Vivliostyle開発者たちも入門本の監修者として協力。最新の更新が本に反映されている。制作過程で問題になったVivliostyleのバグをいくつか修正できた。以下のものなど：
+            <ul>
+              <li>ページ下にまだアキがあるのに段落や画像が次ページに追い出されてしまうことがあったのを修正</li>
+              <li>ページ背景画像がbleed領域に描画されなかったのを修正</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section class="level2" aria-labelledby="入門が難しいという問題がこれでだいぶ解決">
+        <h2 id="入門が難しいという問題がこれでだいぶ解決">入門が難しいという問題がこれでだいぶ解決</h2>
+        <img src="https://vivliostyle.org/assets/posts/2023-05-10-vivliostyle-book/fig-1.png" style="float: right; float-reference: page; width: 9em; margin-left: 0.5em;" alt="『Web技術で本が作れる CSS組版Vivliostyle入門』Vivliostyle監修　リブロワークス著">
+        <ul>
+          <li>CSS組版・Vivliostyleが難しかった理由：入門書がなかった</li>
+          <li>おすすめの入門書ができたことの意味はとても大きい。感謝！</li>
+          <li>これでCSS組版のノウハウが広がって、本に限らず入門に役立つコンテンツが増えることを期待</li>
+          <li>Vivliostyleユーザー必携！　『Web技術で本が作れる CSS組版Vivliostyle入門』Vivliostyle監修　リブロワークス著</li>
+        </ul>
+      </section>
+    </section>
+    <section class="level1" aria-labelledby="vivliostylejs最近の更新">
+      <h1 id="vivliostylejs最近の更新">Vivliostyle.js最近の更新</h1>
+      <section class="level2" aria-labelledby="2022秋からの半年で実装した機能">
+        <h2 id="2022秋からの半年で実装した機能">2022秋からの半年で実装した機能</h2>
+        <ul>
+          <li><a href="https://drafts.csswg.org/css-values-4/#lh">lh and rlh units</a>　⭐️v2.20 (2022-12-16)〜
+            <ul>
+              <li><code>lh</code> は行高(line-height)を基準にした長さの単位</li>
+              <li><code>rlh</code> はルート要素のline-heightが基準</li>
+            </ul>
+          </li>
+          <li><a href="https://www.w3.org/TR/css-break-4/#break-margins">margin-breakプロパティ</a>　⭐️v2.20 (2022-12-16)〜
+            <ul>
+              <li>ブロックのマージンがページの先頭になったときの処理
+                <ul>
+                  <li>デフォルトの <code>margin-break: auto</code> は、なりゆき改ページでページの先頭になったブロックのマージンを破棄</li>
+                  <li><code>margin-break: keep</code> はマージンを保持</li>
+                  <li><code>margin-break: discard</code> はマージンを破棄（0にする）</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="https://www.w3.org/TR/css-content-3/#leaders"><code>leader()</code> function</a>　⭐️v2.22 (2023-01-25)〜
+            <ul>
+              <li>目次の項目とページ番号をつなぐ点線の出力に便利</li>
+            </ul>
+          </li>
+        </ul>
+        <p>例：</p>
+        <style>#leader-test li > a::after {
+content: leader(".") target-counter(attr(href), page);
+}</style>
+        <ol id="leader-test">
+          <li><a href="#leader-test">leader() のテスト</a></li>
+        </ol><br>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector"><span class="token id">#leader-test</span> li <span class="token combinator">></span> a<span class="token pseudo-element">::after</span></span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">leader</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span> <span class="token function">target-counter</span><span class="token punctuation">(</span><span class="token function">attr</span><span class="token punctuation">(</span>href<span class="token punctuation">)</span><span class="token punctuation">,</span> page<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>style</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>ol</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>leader-test<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#leader-test<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>leader() のテスト<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>ol</span><span class="token punctuation">></span></span></code></pre>
+        <ul>
+          <li><a href="https://www.w3.org/TR/css-gcpm-3/#running-elements">Running elements</a>　⭐️v2.25 (2023-05-15)〜
+            <ul>
+              <li>HTML文書内の要素をページマージン領域に柱（欄外見出し）として表示できるようにする</li>
+            </ul>
+          </li>
+        </ul>
+        <p>例：</p>
+        <style>@page {
+@top-left {
+content: element(RunningElement);
+}
+}
+.running-element {
+font-size: 0.7rem;
+position: running(RunningElement);
+}</style>
+        <div class="running-element"><ruby>柱<rt>はしら</rt></ruby>に<em>Running element</em>の例</div>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token atrule"><span class="token rule">@page</span></span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@top-left</span></span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">element</span><span class="token punctuation">(</span>RunningElement<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.running-element</span></span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">0.7</span><span class="token unit">rem</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> <span class="token function">running</span><span class="token punctuation">(</span>RunningElement<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>style</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>running-element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>ruby</span><span class="token punctuation">></span></span>柱<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>rt</span><span class="token punctuation">></span></span>はしら<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>rt</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>ruby</span><span class="token punctuation">></span></span>に<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>em</span><span class="token punctuation">></span></span>Running element<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>em</span><span class="token punctuation">></span></span>の例
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+        <div class="running-element"><ruby>柱<rt>はしら</rt></ruby>に<em>Running element</em>の例</div>
+        <div class="running-element"></div><br>
+        <p><a href="https://www.w3.org/TR/css-gcpm-3/#named-strings">Named strings（名前付き文字列）</a>と<a href="https://www.w3.org/TR/css-gcpm-3/#running-elements">Running elements</a>の比較</p>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Named strings</th>
+              <th>Running elements</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>柱の内容</td>
+              <td>テキストのみ</td>
+              <td>スタイルと構造を含む要素</td>
+            </tr>
+            <tr>
+              <td>指定する要素</td>
+              <td>見出し要素などに指定</td>
+              <td>柱のためだけの要素が必要</td>
+            </tr>
+            <tr>
+              <td>プロパティ指定</td>
+              <td><code>string-set: 名前 content()</code></td>
+              <td><code>position: running(名前)</code></td>
+            </tr>
+            <tr>
+              <td>柱を出力する指定</td>
+              <td><code>content: string(名前)</code></td>
+              <td><code>content: element(名前)</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="level2" aria-labelledby="vivliostyle-viewerの新機能">
+        <h2 id="vivliostyle-viewerの新機能">Vivliostyle Viewerの新機能</h2>
+        <p>CSS組版のプレビューにとどまらず、ブラウザで本を読むためのビュワーとしてより便利なものに ⭐️<a href="https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.24.0">v2.24 (2023-04-01)</a>〜</p>
+        <ul>
+          <li>設定メニューなどUIの多言語化（英語と日本語）</li>
+          <li>「閲覧状態を復元」の機能。これをオンにすると：
+            <ul>
+              <li>読んでる途中のページなど閲覧状態を次に開いたとき復元</li>
+            </ul>
+          </li>
+          <li>マーカー注釈機能。これをオンにすると：
+            <ul>
+              <li>テキストを選択して「ハイライト」でマーカーを引ける</li>
+              <li>メモの記入ができる。「マーカーとメモ」一覧表示も</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </section>
+    <section class="level1" aria-labelledby="vivliostyle今後の開発">
+      <h1 id="vivliostyle今後の開発">Vivliostyle今後の開発</h1>
+      <section class="level2" aria-labelledby="vivliostylejs残っている課題を進める">
+        <h2 id="vivliostylejs残っている課題を進める">Vivliostyle.js残っている課題を進める</h2>
+        <ul>
+          <li>最新CSS仕様サポートの課題
+            <ul>
+              <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/732"><code>::marker</code> 箇条書きのマークを指定する擬似要素</a></li>
+              <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/731"><code>@counter-style</code>　カウンタースタイルを定義</a></li>
+              <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/1032">CSS Nesting</a>、その他</li>
+            </ul>
+          </li>
+          <li>CSS組版機能の改良の課題
+            <ul>
+              <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/1045"><code>@footnote</code> 脚注エリアのスタイル</a></li>
+              <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/543">ページフロートの改良</a></li>
+              <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/569">Mac以外の環境でハイフネーションが無効になる</a></li>
+              <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/579">段組処理の見直し</a>、その他</li>
+            </ul>
+          </li>
+        </ul><!--
+        - 段組の指定がルート要素またはbody要素以外にあるとき、段組のページ分割処理がうまくいかない　([#579](https://github.com/vivliostyle/vivliostyle.js/issues/579))
+        - テーブル内で脚注が機能しない　([#438](https://github.com/vivliostyle/vivliostyle.js/issues/438))
+        - [`@layer`　カスケードレイヤー](https://developer.mozilla.org/ja/docs/Web/CSS/@layer)　([#977](https://github.com/vivliostyle/vivliostyle.js/issues/977))
+        - [`@container`　コンテナクエリー](https://developer.mozilla.org/en-US/docs/Web/CSS/@container)　([#1046](https://github.com/vivliostyle/vivliostyle.js/issues/1046))
+        -->
+      </section>
+      <section class="level2" aria-labelledby="vivliostyle-pubの開発を進める">
+        <h2 id="vivliostyle-pubの開発を進める">Vivliostyle Pubの開発を進める</h2>
+        <ul>
+          <li>原稿ファイルごとのプレビューと全体プレビューの両方可能に</li>
+          <li>原稿（Markdown/HTML）とスタイルシート（CSS）を同時に開いて編集可能に</li>
+          <li><a href="https://github.com/vivliostyle/themes/tree/main/packages/%40vivliostyle/theme-base">Vivliostyle Base Theme</a>のしくみに対応</li>
+          <li>その他
+            <ul>
+              <li><a href="https://github.com/vivliostyle/vivliostyle-pub/issues/218">ベータ版公開までのTo Do（開発）</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section class="level2" aria-labelledby="vivliostyle-cli--vfm--themes">
+        <h2 id="vivliostyle-cli--vfm--themes">Vivliostyle CLI / VFM / Themes</h2>
+        <p><a href="https://github.com/vivliostyle/themes/tree/main/packages/%40vivliostyle/theme-base">Vivliostyle Base Theme</a>ができたことで、Vivliostyle Themesの活用が広がることを期待。</p>
+        <p>VFMがv2に。今後予定されている改良にも期待→<a href="https://github.com/vivliostyle/vfm/issues">VFM issues</a></p>
+        <p>Vivliostyle CLIがv7に。目次生成機能など今後予定されている改良に期待→<a href="https://github.com/vivliostyle/vivliostyle-cli/issues">Vivliostyle CLI issues</a></p>
+      </section>
+      <section class="level2" aria-labelledby="開発貢献者たち協力者の皆様に感謝">
+        <h2 id="開発貢献者たち協力者の皆様に感謝">開発貢献者たち、協力者の皆様に感謝！</h2>
+        <p>開発協力はもちろん、不具合報告や改良要望も歓迎します！</p>
+        <ul>
+          <li>コミュニティ→ <a href="https://vivliostyle.org/ja/community/">https://vivliostyle.org/ja/community/</a></li>
+          <li>あなたも Vivliostyle のスポンサーになりませんか→ <a href="https://vivliostyle.org/ja/sponsors/">https://vivliostyle.org/ja/sponsors/</a></li>
+        </ul>
+        <p>Vivliostyleのサービスやプロダクトをビジネスで利用する上での相談なども歓迎します。ぜひお問合せください。</p>
+        <p>私たちについて→ <a href="https://vivliostyle.org/ja/about-us/">https://vivliostyle.org/ja/about-us/</a></p>
+      </section>
+    </section>
+  </body>
+</html>
