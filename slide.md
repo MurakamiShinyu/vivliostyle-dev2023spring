@@ -12,6 +12,17 @@ Vivliostyle Foundation
 
 # 目次 {.toc role="doc-toc"}
 
+1.  [『CSS組版Vivliostyle入門』の本が出たこと🎉](#css組版vivliostyle入門の本が出たこと)
+    1.  [やっとVivliostyleがここまでの完成度に](#やっとvivliostyleがここまでの完成度に)
+    1.  [入門が難しいという問題がこれでだいぶ解決](#入門が難しいという問題がこれでだいぶ解決)
+1.  [Vivliostyle.js最近の更新](#vivliostylejs最近の更新)
+    1.  [2022秋からの半年で実装した機能](#2022秋からの半年で実装した機能)
+    1.  [Vivliostyle Viewerの新機能](#vivliostyle-viewerの新機能)
+1.  [Vivliostyle今後の開発](#vivliostyle今後の開発)
+    1.  [Vivliostyle.js残っている課題を進める](#vivliostylejs残っている課題を進める)
+    1.  [Vivliostyle Pubの開発を進める](#vivliostyle-pubの開発を進める)
+    1.  [Vivliostyle CLI / VFM / Themes](#vivliostyle-cli--vfm--themes)
+    1.  [開発貢献者たち、協力者の皆様に感謝！](#開発貢献者たち協力者の皆様に感謝)
 
 # 『CSS組版Vivliostyle入門』の本が出たこと🎉
 

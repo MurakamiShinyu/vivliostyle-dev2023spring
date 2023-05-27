@@ -1,7 +1,7 @@
 # Vivliostyleの最新の進化 (2022-05-28)
 
 **View with Vivliostyle Viewer:**
-- <https://vivliostyle.org/viewer/#src=https://murakamishinyu.github.io/vivliostyle-dev2023spring/slide.html&spread=false>
+- <https://vivliostyle.org/viewer/#src=https://murakamishinyu.github.io/vivliostyle-dev2023spring/slide.html>
 
 **HTML:** <https://murakamishinyu.github.io/vivliostyle-dev2023spring/slide.html>
 
